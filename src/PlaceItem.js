@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import mapbox from 'mapbox-gl';
+import mapbox from '!mapbox-gl';
 
 class PlaceItem extends Component {
     goTo() {

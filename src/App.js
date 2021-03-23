@@ -12,7 +12,7 @@ class App extends Component {
       map: null,
       latitude: 41.14273,
       longitude: 16.40652,
-      style: 'mapbox://styles/mapbox/satellite-streets-v9',
+      style: 'mapbox://styles/mapbox/satellite-streets-v11',
       places: []
     }
   }

@@ -9,9 +9,9 @@ class Toggler extends Component {
     }
     render () {
         const styles = [
-            {name: "Satellite", url: "mapbox://styles/mapbox/satellite-streets-v9"},
-            {name: "Dark", url: "mapbox://styles/mapbox/dark-v9"},
-            {name: "Light", url: "mapbox://styles/mapbox/light-v9"},
+            {name: "Satellite", url: "mapbox://styles/mapbox/satellite-streets-v11"},
+            {name: "Dark", url: "mapbox://styles/mapbox/dark-v10"},
+            {name: "Light", url: "mapbox://styles/mapbox/light-v10"},
         ];
         const buttons = styles.map((style, index) => {
             let className = "";
