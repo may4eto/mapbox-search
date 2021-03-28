@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import mapbox from '!mapbox-gl';
+import mapboxgl from 'mapbox-gl'
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default
 
 class PlaceItem extends Component {
     goTo() {
@@ -16,11 +17,11 @@ class PlaceItem extends Component {
         const map = app.state.map;
         const place = this.props.place;
         if (map) {
-            const popup = new mapbox.Popup({
+            const popup = new mapboxgl.Popup({
                 closeButton: false
             });
             popup.setHTML(place.name);
-            const marker = new mapbox.Marker({
+            const marker = new mapboxgl.Marker({
                 color: "#2727e6"
             });
             marker.setLngLat([place.longitude, place.latitude]);
