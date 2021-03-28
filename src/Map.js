@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import mapbox from '!mapbox-gl';
+import mapboxgl from 'mapbox-gl'
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default
 import './Map.css'
 
 class Map extends Component {
     componentDidMount() {
         const app = this.props.app
-        mapbox.accessToken = 'pk.eyJ1IjoibWF5NGV0byIsImEiOiJja21mMzRsOG8wc3JvMnJwNXh6MDBzanJ6In0.aiF6EXF-QsXbyx8E_vbCGQ';
-        var map = new mapbox.Map({
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWF5NGV0byIsImEiOiJja21mMzRsOG8wc3JvMnJwNXh6MDBzanJ6In0.aiF6EXF-QsXbyx8E_vbCGQ';
+        var map = new mapboxgl.Map({
             container: 'map',
             style: app.state.style,
             center: [
@@ -14,7 +15,7 @@ class Map extends Component {
             ],
             zoom: 13
         });
-        const navigationControl = new mapbox.NavigationControl();
+        const navigationControl = new mapboxgl.NavigationControl();
         map.addControl(navigationControl);
         this.props.app.setState({
             map: map
